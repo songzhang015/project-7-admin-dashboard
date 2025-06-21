@@ -4,8 +4,16 @@
 Grid Layout is as follows (class names):
 layout-container : holds everything, with 2 parts
     sidebar : holds everything in sidebar
+        title
+        sidebar-container
+            sidebar-items
+        other
     main-content : holds everything else, including header and projects + side content
         header : header for dashboard
+            navigation
+            profile
+            welcome
+            actions
         sections : includes projects (left) and announcements/trending (right)
             projects-section
             side-section
@@ -28,6 +36,42 @@ layout-container : holds everything, with 2 parts
 .sidebar {
     background-color: rgb(70, 144, 208);
     height: 100%;
+    display: grid;
+    grid-template-rows: 2fr 6fr 3fr;
+    height: 50%;
+    gap: 40px;
+}
+
+.title {
+    background-color: antiquewhite;
+    padding-left: 2rem;
+    padding-top: 2rem;
+}
+
+.sidebar-container {
+    background-color: burlywood;
+}
+
+.sidebar-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    padding-left: 2rem;
+}
+
+.other {
+    background-color: darksalmon;
+}
+
+.other-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    padding-left: 2rem;
 }
 
 .main-content {
