@@ -1,1 +1,65 @@
 /* CSS File for Admin Dashboard Project */
+
+/*
+Grid Layout is as follows (class names):
+layout-container : holds everything, with 2 parts
+    sidebar : holds everything in sidebar
+    main-content : holds everything else, including header and projects + side content
+        header : header for dashboard
+        sections : includes projects (left) and announcements/trending (right)
+            projects-section
+            side-section
+                announcements
+                trending
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.layout-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: rgb(70, 144, 208);
+    height: 100%;
+}
+
+.main-content {
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+
+}
+
+.header {
+
+}
+
+.sections {
+    background-color: rgb(227, 232, 239);
+    display: grid;
+    grid-template-columns: 10fr 4fr;
+}
+
+.projects-section {
+    background-color: rgb(203, 255, 238);
+}
+
+.side-section {
+    background-color: rgb(214, 255, 255);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.announcements {
+    background-color: bisque;
+}
+
+.trending {
+    background-color: gold;
+}
