@@ -34,22 +34,24 @@ layout-container : holds everything, with 2 parts
 }
 
 .sidebar {
-    background-color: rgb(70, 144, 208);
-    height: 100%;
-    display: grid;
-    grid-template-rows: 2fr 6fr 3fr;
-    height: 50%;
-    gap: 40px;
+    background-color: rgb(25, 146, 212);
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .title {
+    display: flex;
     background-color: antiquewhite;
     padding-left: 2rem;
-    padding-top: 2rem;
+    align-items: center;
+
 }
 
 .sidebar-container {
     background-color: burlywood;
+
 }
 
 .sidebar-items {
@@ -57,12 +59,12 @@ layout-container : holds everything, with 2 parts
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-
     padding-left: 2rem;
 }
 
 .other {
     background-color: darksalmon;
+
 }
 
 .other-items {
@@ -70,24 +72,95 @@ layout-container : holds everything, with 2 parts
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-
     padding-left: 2rem;
 }
 
 .main-content {
     display: grid;
     grid-template-rows: 1fr 5fr;
-
 }
 
 .header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
 
+.navigation {
+    display: flex;
+    padding-left: 4rem;
+    padding-right: 1rem;
+    align-items: center;
+    background-color: yellow;
+    gap: 1rem;
+}
+
+.navigation-bar {
+    border-radius: 32px;
+    border-style: hidden;
+    background-color: rgb(230, 230, 230);
+    height: 2rem;
+    width: 100%;
+}
+
+.profile {
+    display: flex;
+    padding-left: 1rem;
+    justify-content: center;
+    gap: 4rem;
+    align-items: center;
+}
+
+.profile-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.welcome {
+    display: flex;
+    padding-left: 4rem;
+    padding-top: 2rem;
+    gap: 1rem;
+}
+
+.welcome-icon {
+
+}
+
+.welcome-message > p {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.welcome-message > h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    justify-content: left;
+    gap: 4rem;
+    align-items: center;
+    background-color: aliceblue;
+    padding-left: 1rem;
+}
+
+.actions-new, .actions-upload, .actions-share {
+    border-radius: 32px;
+    border-style: none;
+    background-color: rgb(25, 146, 212);
+    padding: 1em 2.75em;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
 }
 
 .sections {
     background-color: rgb(227, 232, 239);
     display: grid;
     grid-template-columns: 10fr 4fr;
+    
 }
 
 .projects-section {
@@ -102,8 +175,78 @@ layout-container : holds everything, with 2 parts
 
 .announcements {
     background-color: bisque;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.announcements-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.announcements-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 12px;
+    height: 90%;
+    width: 90%;
+    padding: 2rem;
+    gap: 1.25rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.site-maintenance, .community-share-day, .updated-privacy-policy {
+    font-size: 1.25rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.site-maintenance > p, .community-share-day > p, .updated-privacy-policy > p {
+    color: rgb(80, 80, 80);
 }
 
 .trending {
     background-color: gold;
+    display: flex;
+    flex-direction: column;
+}
+
+.trending-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.trending-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 12px;
+    height: 90%;
+    width: 90%;
+    padding: 2rem;
+    gap: 1.25rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.trending-item {
+    font-size: 1.15rem;
+    flex-grow: 1;
+    display: flex;
+}
+
+.trending-text {
+    display: flex;
+    flex-direction: column;
 }
