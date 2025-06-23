@@ -3,9 +3,9 @@
 /*
 Grid Layout is as follows (class names):
 layout-container : holds everything, with 2 parts
-    sidebar : holds everything in sidebar
+    sidebar-container : holds everything in sidebar
         title
-        sidebar-container
+        sidebar-main
             sidebar-items
         other
     main-content : holds everything else, including header and projects + side content
@@ -33,46 +33,41 @@ layout-container : holds everything, with 2 parts
     height: 100vh;
 }
 
-.sidebar {
+.sidebar-container {
     background-color: rgb(25, 146, 212);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+    gap: 5rem;
 }
 
-.title {
+.sidebar-title {
     display: flex;
     background-color: antiquewhite;
     padding-left: 2rem;
     align-items: center;
-
+    font-size: 3rem;
 }
 
-.sidebar-container {
+.sidebar-main {
     background-color: burlywood;
-
-}
-
-.sidebar-items {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
     padding-left: 2rem;
+    font-size: 2rem;
+    gap: 1.5rem;
 }
 
-.other {
+.sidebar-other {
     background-color: darksalmon;
-
-}
-
-.other-items {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
     padding-left: 2rem;
+    font-size: 2rem;
+    gap: 1.5rem;
 }
 
 .main-content {
@@ -91,14 +86,13 @@ layout-container : holds everything, with 2 parts
     padding-left: 4rem;
     padding-right: 1rem;
     align-items: center;
-    background-color: yellow;
     gap: 1rem;
 }
 
 .navigation-bar {
     border-radius: 32px;
     border-style: hidden;
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(226, 232, 240);
     height: 2rem;
     width: 100%;
 }
@@ -142,7 +136,6 @@ layout-container : holds everything, with 2 parts
     justify-content: left;
     gap: 4rem;
     align-items: center;
-    background-color: aliceblue;
     padding-left: 1rem;
 }
 
@@ -157,35 +150,63 @@ layout-container : holds everything, with 2 parts
 }
 
 .sections {
-    background-color: rgb(227, 232, 239);
+    background-color: rgb(226, 232, 240);
     display: grid;
     grid-template-columns: 10fr 4fr;
-    
 }
 
 .projects-section {
-    background-color: rgb(203, 255, 238);
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 2rem 0 1rem 2rem;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 100%;
+    gap: 2rem;
+    padding: 0 1rem 1rem 2rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    border-left: 12px solid rgb(255, 183, 0);
+    padding: 3rem 2rem 3rem 2rem;
+}
+
+.card > h3 {
+    font-size: 2rem;
+}
+
+.card > p {
+    font-size: 1.5rem;
+    color: rgb(80, 80, 80);
 }
 
 .side-section {
-    background-color: rgb(214, 255, 255);
+
     display: grid;
-    grid-template-rows: 1fr 1fr;
+
 }
 
 .announcements {
-    background-color: bisque;
     display: flex;
     flex-direction: column;
-
 }
 
 .announcements-title {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
+    margin: 2rem 0 1rem 1rem;
 }
 
 .announcements-container {
@@ -201,7 +222,7 @@ layout-container : holds everything, with 2 parts
     margin-bottom: 1rem;
 }
 
-.site-maintenance, .community-share-day, .updated-privacy-policy {
+.first-announcement, .second-announcement, .third-announcement {
     font-size: 1.25rem;
     flex-grow: 1;
     display: flex;
@@ -209,22 +230,20 @@ layout-container : holds everything, with 2 parts
     justify-content: center;
 }
 
-.site-maintenance > p, .community-share-day > p, .updated-privacy-policy > p {
+.first-announcement > p, .second-announcement > p, .third-announcement > p {
     color: rgb(80, 80, 80);
 }
 
 .trending {
-    background-color: gold;
     display: flex;
     flex-direction: column;
+    margin-bottom: 4rem;
 }
 
 .trending-title {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
+    margin: 2rem 0 1rem 1rem;
 }
 
 .trending-container {
@@ -237,7 +256,6 @@ layout-container : holds everything, with 2 parts
     padding: 2rem;
     gap: 1.25rem;
     margin-left: 1rem;
-    margin-bottom: 1rem;
 }
 
 .trending-item {
@@ -249,4 +267,8 @@ layout-container : holds everything, with 2 parts
 .trending-text {
     display: flex;
     flex-direction: column;
+}
+
+.trending-text > p {
+    color: rgb(80, 80, 80);
 }
