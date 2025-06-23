@@ -1,30 +1,17 @@
 /* CSS File for Admin Dashboard Project */
 
-/*
-Grid Layout is as follows (class names):
-layout-container : holds everything, with 2 parts
-    sidebar-container : holds everything in sidebar
-        title
-        sidebar-main
-            sidebar-items
-        other
-    main-content : holds everything else, including header and projects + side content
-        header : header for dashboard
-            navigation
-            profile
-            welcome
-            actions
-        sections : includes projects (left) and announcements/trending (right)
-            projects-section
-            side-section
-                announcements
-                trending
-*/
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 .layout-container {
@@ -40,34 +27,60 @@ layout-container : holds everything, with 2 parts
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     gap: 4rem;
+    color: white;
 }
 
 .sidebar-title {
     display: flex;
-    background-color: antiquewhite;
-    padding-left: 2rem;
+    padding-left: 2.65rem;
+    padding-right: 2.65rem;
     align-items: center;
     font-size: 3rem;
+    gap: 1rem;
+    font-weight: bold;
+}
+
+.title-icon {
+    height: 3rem;
+    width: 3rem;
+    filter: invert(100%);
 }
 
 .sidebar-main {
-    background-color: burlywood;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 2rem;
+    padding-left: 3rem;
     font-size: 2.25rem;
     gap: 1.5rem;
 }
 
 .sidebar-other {
-    background-color: darksalmon;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 2rem;
+    padding-left: 3rem;
     font-size: 2.25rem;
     gap: 1.5rem;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+    cursor: pointer;
+    user-select: none;
+}
+
+.sidebar-icon {
+    height: 2.25rem;
+    width: 2.25rem;
+    filter: invert(100%);
+}
+
+img[src="icons/message.svg"] {
+    transform: scaleX(-1);
 }
 
 .main-content {
@@ -79,7 +92,6 @@ layout-container : holds everything, with 2 parts
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
-    
 }
 
 .navigation {
@@ -98,6 +110,13 @@ layout-container : holds everything, with 2 parts
     width: 100%;
 }
 
+.navigation-icon, .profile-bell {
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+
 .profile {
     display: flex;
     padding-left: 1rem;
@@ -111,15 +130,28 @@ layout-container : holds everything, with 2 parts
     font-weight: bold;
 }
 
+.profile-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
 .welcome {
     display: flex;
     padding-left: 4rem;
     padding-top: 1.5rem;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .welcome-icon {
-
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: -0.75rem;
+    cursor: pointer;
 }
 
 .welcome-message > p {
@@ -148,6 +180,10 @@ layout-container : holds everything, with 2 parts
     font-size: 1rem;
     color: white;
     font-weight: bold;
+}
+
+button {
+    cursor: pointer;
 }
 
 .sections {
@@ -194,9 +230,7 @@ layout-container : holds everything, with 2 parts
 }
 
 .side-section {
-
     display: grid;
-
 }
 
 .announcements {
@@ -263,6 +297,8 @@ layout-container : holds everything, with 2 parts
     font-size: 1.15rem;
     flex-grow: 1;
     display: flex;
+    align-items: center;
+    gap: 1.25rem;
 }
 
 .trending-text {
@@ -272,4 +308,12 @@ layout-container : holds everything, with 2 parts
 
 .trending-text > p {
     color: rgb(80, 80, 80);
+}
+
+.trending-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
 }
